@@ -14,7 +14,7 @@ spec:
   sources:
     - repoURL: https://github.com/igal-harel-sage/rollout_demo.git
       targetRevision: HEAD
-      path: helm-chart/demo
+      path: demo
   syncPolicy:
     automated:
       prune: true
