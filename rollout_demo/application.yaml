@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rollout-demo
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+
+spec:
+  project: default
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  sources:
+    - repoURL: https://github.com/igal-harel-sage/rollout_demo.git
+      targetRevision: HEAD
+      path: helm-chart/demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
