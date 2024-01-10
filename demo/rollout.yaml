@@ -33,11 +33,11 @@ spec:
     metadata:
       labels:
         app: demo
-        version: green
+        version: blue
     spec:
       containers:
         - name: demo
-          image: argoproj/rollouts-demo:green
+          image: argoproj/rollouts-demo:blue
           imagePullPolicy: Always
           ports:
             - name: web
