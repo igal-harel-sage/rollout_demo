@@ -28,16 +28,16 @@ spec:
   selector:
     matchLabels:
       app: demo
-      version: blue
+      version:
   template:
     metadata:
       labels:
         app: demo
-        version: blue
+        version: green
     spec:
       containers:
         - name: demo
-          image: argoproj/rollouts-demo:blue
+          image: argoproj/rollouts-demo:green
           imagePullPolicy: Always
           ports:
             - name: web
